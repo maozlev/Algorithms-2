@@ -1,7 +1,12 @@
 import java.util.*;
 import java.lang.*;
 
-//ID: 204594758
+/* 
+ find the diameter of graph
+ diameter is the greatest distance between nodes
+ input - matrix of neighbors
+ output - diameter
+ */
 public class Diameter {
 
     private boolean [][] mat;
