@@ -5,6 +5,19 @@ public class Best {
     static int endIndex;
     static int sum;
 
+    public static void cycle_best(int[] a){
+        int sum2=0;
+        int[] b = new int[a.length];
+        for (int i = 0; i <a.length ; i++) {
+            b[i] = -a[i];
+            sum2+=a[i];
+        }
+        int sum1 = calculate(b);
+        int maxim = Math.max(sum2-(-sum1), calculate(a));
+        System.out.println("Cycle Best sum is: "+maxim);
+
+    }
+
     public static void Calculate(int[] a) {
         int max = a[0],
                 temp_max = 0,start = 0,
@@ -25,6 +38,31 @@ public class Best {
         sum =  max;
         startIndex =  start;
         endIndex = end;
+
+    }
+
+    public static int calculate(int[] a) {
+        int max = a[0],
+                temp_max = 0,start = 0,
+                end = 0, s = 0;
+
+        for (int i = 0; i < a.length; i++) {
+            temp_max += a[i];
+            if (max < temp_max) {
+                max = temp_max;
+                start = s;
+                end = i;
+            }
+            if (temp_max < 0) {
+                temp_max = 0;
+                s = i + 1;
+            }
+        }
+        sum =  max;
+        startIndex =  start;
+        endIndex = end;
+
+        return sum;
 
     }
     public static void fw(int[][] mat){
@@ -58,6 +96,7 @@ public class Best {
         System.out.println("And the sum is: "+sum+"! From index "+startIndex+" to: "+endIndex);
         Calculate(arr2);
         System.out.println("And the sum is: "+sum+"! From index "+startIndex+" to: "+endIndex);
+        cycle_best(arr2);
 
 //
 //        int[][] mat = {
