@@ -1,4 +1,4 @@
-// Created by Or Kadrawi
+
 
 public class _03_Floyd_Warshall_weights {
 
@@ -7,7 +7,8 @@ public class _03_Floyd_Warshall_weights {
     public static void main(String[] args) {
 
         //Q1 basic floyd warshall to find minimum price
-        int[][] mat = {{0, 1, inf, 5},
+        int[][] mat =
+               {{0, 1, inf, 5},
                 {1, 0, 10, inf},
                 {inf, 10, 0, 3},
                 {5, inf, 3, 0}};

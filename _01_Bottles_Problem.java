@@ -1,4 +1,4 @@
-// Created by Or Kadrawi
+
 
 public class _01_Bottles_Problem {
 
